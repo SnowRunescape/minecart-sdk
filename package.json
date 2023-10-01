@@ -1,0 +1,21 @@
+{
+  "name": "minecart-sdk",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnowRunescape/minecart-sdk"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
