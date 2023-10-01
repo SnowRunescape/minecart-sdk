@@ -6,7 +6,7 @@ import { storage } from "@Minecart/storage";
 
 export const cart = {
     getCart(): Cart {
-        return storage.get(MINECART_LOCALSTORAGE_KEY) || { username: null, cart: [] };
+        return storage.get(MINECART_LOCALSTORAGE_KEY) || { username: null, items: [] };
     },
 
     setUsername(username: string) {
