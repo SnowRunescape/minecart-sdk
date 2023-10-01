@@ -9,9 +9,14 @@ declare module "minecart-sdk" {
         amount: number,
     }
 
+    export type Product = {
+        id: number,
+        description: string,
+    }
+
     export const minecart: {
         categories: {
-            all(): Promise<any>;
+            all(): Promise<Product[]>;
         };
         products: {
             all(filters?: Record<string, string | number>): Promise<any[]>;
