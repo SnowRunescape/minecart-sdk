@@ -10,6 +10,9 @@ declare module "minecart-sdk" {
     }
 
     export const minecart: {
+        categories: {
+            all(): Promise<any>;
+        };
         products: {
             all(filters?: Record<string, string | number>): Promise<any[]>;
         };

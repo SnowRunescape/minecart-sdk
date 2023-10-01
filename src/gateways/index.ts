@@ -1,4 +1,4 @@
-import { API } from "./api";
+import { API } from "@Minecart/api";
 
 export const gateways = {
     async all() {
