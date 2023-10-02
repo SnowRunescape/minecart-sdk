@@ -1,4 +1,11 @@
 declare module "minecart-sdk" {
+    export type Rule = {
+        id: number,
+        rule: string,
+        description: string,
+        punishment: string,
+    }
+
     export type Cart = {
         username: string | null,
         items: Item[],
@@ -15,6 +22,9 @@ declare module "minecart-sdk" {
     }
 
     export const minecart: {
+        rules: {
+            all(): Promise<Rule[]>;
+        };
         categories: {
             all(): Promise<Product[]>;
         };
