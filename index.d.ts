@@ -10,11 +10,12 @@ declare module "minecart-sdk" {
         id: number,
         team: string,
         color: string,
-        members: Member,
+        members: Member[],
     }
 
     export type Member = {
-        [key: number]: string;
+        id: number,
+        name: string,
     }
 
     export type Cart = {
