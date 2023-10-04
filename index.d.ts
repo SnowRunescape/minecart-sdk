@@ -30,7 +30,10 @@ declare module "minecart-sdk" {
 
     export type Product = {
         id: number,
+        category: number,
+        name: string,
         description: string,
+        archive_url: string,
     }
 
     export const minecart: {
@@ -41,10 +44,10 @@ declare module "minecart-sdk" {
             all(): Promise<Team[]>;
         },
         categories: {
-            all(): Promise<Product[]>;
+            all(): Promise<any[]>;
         };
         products: {
-            all(filters?: Record<string, string | number>): Promise<any[]>;
+            all(filters?: Record<string, string | number>): Promise<Product[]>;
         };
         gateways: {
             all(): Promise<any>;
