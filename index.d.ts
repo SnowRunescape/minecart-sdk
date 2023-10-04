@@ -36,6 +36,9 @@ declare module "minecart-sdk" {
         rules: {
             all(): Promise<Rule[]>;
         };
+        team: {
+            all(): Promise<Team[]>;
+        },
         categories: {
             all(): Promise<Product[]>;
         };
