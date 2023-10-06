@@ -1,4 +1,14 @@
 declare module "minecart-sdk" {
+    export type News = {
+        id: number,
+        title: string,
+        description: string,
+        news: string,
+        posted_by: string,
+        created_at: string,
+        archive_url: string,
+    }
+
     export type Rule = {
         id: number,
         rule: string,
@@ -37,6 +47,9 @@ declare module "minecart-sdk" {
     }
 
     export const minecart: {
+        news: {
+            all(): Promise<News[]>;
+        },
         rules: {
             all(): Promise<Rule[]>;
         };
