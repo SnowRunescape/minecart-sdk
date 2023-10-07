@@ -15,3 +15,7 @@ export const minecart = {
     gateways,
     cart,
 }
+
+// Check another way to expose the minecart variable in webpack
+// @ts-ignore
+window.minecart = minecart;
