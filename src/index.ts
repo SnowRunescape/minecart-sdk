@@ -1,6 +1,7 @@
 import { store } from "@Minecart/store";
 import { gateways } from "@Minecart/gateways";
 import { categories } from "@Minecart/categories";
+import { servers } from "@Minecart/servers";
 import { products } from "@Minecart/products";
 import { cart } from "@Minecart/cart";
 import { news } from "@Minecart/news";
@@ -13,6 +14,7 @@ export const minecart = {
     rules,
     team,
     categories,
+    servers,
     products,
     gateways,
     cart,

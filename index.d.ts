@@ -67,6 +67,12 @@ declare module "minecart-sdk" {
         amount: number,
     }
 
+    export type Server = {
+        id: number,
+        server_name: string,
+        archive_url: string,
+    }
+
     export type Product = {
         id: number,
         category: number,
@@ -90,6 +96,9 @@ declare module "minecart-sdk" {
         },
         categories: {
             all(): Promise<any[]>;
+        };
+        servers: {
+            all(): Promise<Server[]>;
         };
         products: {
             all(filters?: Record<string, string | number>): Promise<Product[]>;
