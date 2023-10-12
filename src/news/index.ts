@@ -4,9 +4,9 @@ import { News } from "./types";
 export const news = {
     async all() {
         try {
-            const products = await API("/shop/news");
+            const news = await API("/shop/news");
 
-            return products as News[];
+            return news as News[];
         } catch (error: any) {
             console.error("Error fetching news:", error.message);
             return [];
