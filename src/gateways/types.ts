@@ -1,0 +1,1 @@
+export type Gateway = "MercadoPago" | "PayPal" | "PicPay" | "Pix" | "Stripe";

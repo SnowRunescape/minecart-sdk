@@ -81,6 +81,8 @@ declare module "minecart-sdk" {
         archive_url: string,
     }
 
+    export type Gateway = "MercadoPago" | "PayPal" | "PicPay" | "Pix" | "Stripe";
+
     export const minecart: {
         store: {
             get(): Promise<Store>;
@@ -104,7 +106,7 @@ declare module "minecart-sdk" {
             all(filters?: Record<string, string | number>): Promise<Product[]>;
         };
         gateways: {
-            all(): Promise<any>;
+            all(): Promise<Gateway[]>;
         };
         cart: {
             getCart(): Cart;

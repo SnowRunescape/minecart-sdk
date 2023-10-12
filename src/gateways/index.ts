@@ -1,7 +1,15 @@
 import { API } from "@Minecart/api";
+import { Gateway } from "./types";
 
 export const gateways = {
     async all() {
-        return API("/shop/gateways");
+        try {
+            const gateways = await API("/shop/gateways");
+
+            return gateways as Gateway[];
+        } catch (error: any) {
+            console.error("Error fetching gateways:", error.message);
+            return [];
+        }
     }
 };
