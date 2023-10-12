@@ -114,7 +114,7 @@ declare module "minecart-sdk" {
             addProduct(productId: number, amount?: number): void;
             updateAmountProduct(productId: number, amount: number): void;
             removeProduct(productId: number): void;
-            finishOrder(gateway: string): string;
+            finishOrder(gateway: Gateway): string;
         };
     };
 }

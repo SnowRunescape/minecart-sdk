@@ -2,6 +2,7 @@
 import { MINECART_LOCALSTORAGE_KEY } from "@Minecart/config";
 import { API } from "@Minecart/api";
 import { Cart } from "./types";
+import { Gateway } from "@Minecart/gateways/types";
 import { storage } from "@Minecart/storage";
 
 export const cart = {
@@ -51,7 +52,7 @@ export const cart = {
         storage.set(MINECART_LOCALSTORAGE_KEY, cart);
     },
 
-    finishOrder(gateway: string) {
+    finishOrder(gateway: Gateway) {
         const cart = this.getCart();
 
         const result = API("/shop/goToPayment", "POST", {
