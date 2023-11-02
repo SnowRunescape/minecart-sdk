@@ -3,6 +3,7 @@ declare module "minecart-sdk" {
         name: string,
         server_ip: string,
         customization: Customization,
+        widgets: Widgets,
     }
 
     export type Customization = {
@@ -26,6 +27,25 @@ declare module "minecart-sdk" {
     export type Menu = {
         enable: boolean,
         image: string,
+    }
+
+    export type Widgets = {
+        discord: {
+            id: number,
+        },
+        twitter: {
+            name: string,
+        },
+        purchases: {
+            enabled: boolean,
+            display_value: boolean,
+            listing_type: string,
+            listing_quantity: number,
+            list: {
+                buyer: string,
+                amount?: string,
+            }
+        }
     }
 
     export type News = {
