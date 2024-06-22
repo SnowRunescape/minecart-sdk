@@ -1,25 +1,25 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "module": "CommonJS",
-        "moduleResolution": "node",
-        "outDir": "build",
-        "skipLibCheck": true,
-        "strict": true,
-        "strictFunctionTypes": true,
-        "target": "ES2022",
-        "baseUrl": ".",
-        "paths": {
-            "@Minecart/*": [
-                "./src/*"
-            ],
-        },
-        "rootDir": "src"
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "build",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "target": "ES2022",
+    "baseUrl": ".",
+    "paths": {
+      "@Minecart/*": [
+        "./src/*"
+      ],
     },
-    "include": [
-        "src"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "rootDir": "src"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
