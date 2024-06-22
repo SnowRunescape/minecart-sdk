@@ -6,6 +6,10 @@ declare module "minecart-sdk" {
     widgets: Widgets,
   }
 
+  export type User = {
+    username: string,
+  }
+
   export type Archive = {
     url: string,
   }
@@ -57,7 +61,7 @@ declare module "minecart-sdk" {
     title: string,
     description: string,
     news: string,
-    posted_by: string,
+    user: User,
     created_at: string,
     archive: Archive,
   }
@@ -102,6 +106,7 @@ declare module "minecart-sdk" {
     category: number,
     name: string,
     description: string,
+    value: string,
     archive: Archive,
   }
 
