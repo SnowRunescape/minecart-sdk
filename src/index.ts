@@ -1,4 +1,3 @@
-import { cart } from "@Minecart/services/cart";
 import { categories } from "@Minecart/services/categories";
 import { gateways } from "@Minecart/services/gateways";
 import { news } from "@Minecart/services/news";
@@ -17,7 +16,6 @@ export const minecart = {
   servers,
   products,
   gateways,
-  cart,
 }
 
 // Check another way to expose the minecart variable in webpack

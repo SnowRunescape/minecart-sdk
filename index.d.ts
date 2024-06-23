@@ -84,17 +84,6 @@ declare module "minecart-sdk" {
     id: number,
     name: string,
   }
-
-  export type Cart = {
-    username: string | null,
-    items: Item[],
-  }
-
-  export type Item = {
-    id: number,
-    amount: number,
-  }
-
   export type Server = {
     id: number,
     server_name: string,
@@ -136,14 +125,6 @@ declare module "minecart-sdk" {
     };
     gateways: {
       all(): Promise<Gateway[]>;
-    };
-    cart: {
-      getCart(): Cart;
-      setUsername(username: string): void;
-      addProduct(productId: number, amount?: number): void;
-      updateAmountProduct(productId: number, amount: number): void;
-      removeProduct(productId: number): void;
-      finishOrder(gateway: Gateway): string;
     };
   };
 }
