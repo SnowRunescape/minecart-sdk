@@ -52,7 +52,7 @@ declare module "minecart-sdk" {
       list: {
         buyer: string,
         amount?: string,
-      }
+      }[]
     }
   }
 
