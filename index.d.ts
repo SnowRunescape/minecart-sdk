@@ -82,8 +82,9 @@ declare module "minecart-sdk" {
 
   export type Member = {
     id: number,
-    name: string,
+    username: string,
   }
+
   export type Server = {
     id: number,
     server_name: string,

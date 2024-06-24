@@ -7,5 +7,5 @@ export type Team = {
 
 export type Member = {
   id: number,
-  name: string,
+  username: string,
 }
