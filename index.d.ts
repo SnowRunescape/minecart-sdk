@@ -102,6 +102,15 @@ declare module "minecart-sdk" {
 
   export type Gateway = "MercadoPago" | "PayPal" | "PicPay" | "Pix" | "Stripe";
 
+  export type Payment = {
+    url: string,
+  }
+
+  export type Item = {
+    id: number,
+    amount: number,
+  }
+
   export const minecart: {
     store: {
       get(): Promise<Store>;
@@ -126,6 +135,9 @@ declare module "minecart-sdk" {
     };
     gateways: {
       all(): Promise<Gateway[]>;
+    };
+    payment: {
+      create(): Promise<Payment>;
     };
   };
 }
