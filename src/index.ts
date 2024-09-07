@@ -18,6 +18,10 @@ export const minecart = {
   products,
   gateways,
   payment,
+  setApiKey: (key: string) => {
+    // @ts-ignore
+    window.minecartApiKey = key;
+  },
 };
 
 // Check another way to expose the minecart variable in webpack

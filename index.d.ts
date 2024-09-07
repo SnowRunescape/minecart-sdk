@@ -144,5 +144,6 @@ declare module "minecart-sdk" {
         coupon?: string
       ): Promise<Payment>;
     };
+    setApiKey(key: string): void;
   };
 }

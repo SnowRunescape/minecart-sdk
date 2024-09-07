@@ -1,10 +1,11 @@
 import { AxiosError, AxiosInstance } from "axios";
 
 const onRequest = (config: any) => {
-  const authorization = localStorage.getItem("authorization");
+  // @ts-ignore
+  const key = window?.minecartApiKey;
 
-  if (authorization) {
-    config.headers.Authorization = `Bearer ${authorization}`;
+  if (key) {
+    config.headers["X-MINECART-KEY"] = key;
   }
 
   return config;
