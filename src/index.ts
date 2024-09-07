@@ -18,7 +18,7 @@ export const minecart = {
   products,
   gateways,
   payment,
-}
+};
 
 // Check another way to expose the minecart variable in webpack
 // @ts-ignore

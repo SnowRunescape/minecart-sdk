@@ -1,15 +1,16 @@
-import { API } from "@Minecart/services/api";
-import { Gateway } from "./types";
+import { API, parseResponseData } from "@Minecart/services/api";
+import { RawResponse } from "@Minecart/services/api/types";
+import { Gateway } from "@Minecart/types/Gateway";
 
 export const gateways = {
   async all() {
     try {
-      const gateways = await API("/shop/gateways");
-
-      return gateways as Gateway[];
+      return await API.get<RawResponse<Gateway[]>>("/shop/gateways").then(
+        (data) => parseResponseData(data)
+      );
     } catch (error: any) {
       console.error("Error fetching gateways:", error.message);
       return [];
     }
-  }
+  },
 };

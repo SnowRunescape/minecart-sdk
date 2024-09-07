@@ -1,15 +1,16 @@
-import { API } from "@Minecart/services/api";
-import { Rule } from "./types";
+import { API, parseResponseData } from "@Minecart/services/api";
+import { Rule } from "@Minecart/types/Rule";
+import { RawResponse } from "../api/types";
 
 export const rules = {
   async all() {
     try {
-      const products = await API("/shop/rules");
-
-      return products as Rule[];
+      return await API.get<RawResponse<Rule[]>>("/shop/rules").then((data) =>
+        parseResponseData(data)
+      );
     } catch (error: any) {
       console.error("Error fetching rules:", error.message);
       return [];
     }
-  }
+  },
 };

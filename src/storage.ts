@@ -5,10 +5,11 @@ export const storage = {
     if (item) {
       try {
         return JSON.parse(item);
-      } catch (error) { }
+      } catch (error) {}
     }
 
     return null;
   },
-  set: (key: string, value: {}) => localStorage.setItem(key, JSON.stringify(value)),
-}
+  set: (key: string, value: {}) =>
+    localStorage.setItem(key, JSON.stringify(value)),
+};

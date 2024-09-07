@@ -1,3 +1,3 @@
 export type Archive = {
-  url: string,
-}
+  url: string;
+};

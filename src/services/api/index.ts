@@ -1,39 +1,30 @@
 import { MINECART_API } from "@Minecart/config";
+import axios, { AxiosResponse } from "axios";
+import { setupInterceptores } from "./interceptors";
+import { RawResponse } from "./types";
 
-interface Filters {
-  [key: string]: any;
-}
+const TIMEOUT = 1000 * 10;
 
-export const API = async (
-  uri: string,
-  method = "GET",
-  filters: Filters = {}
-) => {
-  const url = new URL(`${MINECART_API}${uri}`);
+export const API = axios.create({
+  baseURL: MINECART_API,
+  timeout: TIMEOUT,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
-  const options: RequestInit = {
-    method,
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+setupInterceptores(API);
 
-  if (method === "GET") {
-    Object.entries(filters).forEach(([key, value]) => {
-      url.searchParams.append(key, String(value));
-    });
-  } else if (method === "POST") {
-    options.body = JSON.stringify(filters);
+export const parseResponseData = <T>(
+  response: AxiosResponse<RawResponse<T>> | AxiosResponse<T>
+): T => {
+  if (
+    typeof response.data === "object" &&
+    !!response.data &&
+    "data" in response.data
+  ) {
+    return response.data.data;
   }
 
-  const response = await fetch(url, options);
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch. Status: ${response.status}`);
-  }
-
-  const result = await response.json();
-
-  return result;
+  return response.data;
 };

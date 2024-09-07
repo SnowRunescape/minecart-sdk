@@ -1,6 +1,7 @@
 import { API } from "@Minecart/services/api";
-import { Gateway } from "../gateways/types";
-import { Item, Payment } from "./types";
+import { RawResponse } from "@Minecart/services/api/types";
+import { Gateway } from "@Minecart/types/Gateway";
+import { Item, Payment } from "@Minecart/types/Payment";
 
 export const payment = {
   async create(
@@ -10,14 +11,12 @@ export const payment = {
     coupon?: string
   ) {
     try {
-      const payment = await API("/shop/payment", "POST", {
+      return await API.post<RawResponse<Payment>>("/shop/payment", {
         gateway,
         username,
         coupon,
         cart: items,
       });
-
-      return payment as Payment;
     } catch (error: any) {
       console.error("Error create payment:", error.message);
       return [];
