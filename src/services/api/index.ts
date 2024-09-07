@@ -4,11 +4,16 @@ interface Filters {
   [key: string]: any;
 }
 
-export const API = async (uri: string, method = "GET", filters: Filters = {}) => {
+export const API = async (
+  uri: string,
+  method = "GET",
+  filters: Filters = {}
+) => {
   const url = new URL(`${MINECART_API}${uri}`);
 
   const options: RequestInit = {
     method,
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -31,4 +36,4 @@ export const API = async (uri: string, method = "GET", filters: Filters = {}) =>
   const result = await response.json();
 
   return result;
-}
+};
