@@ -100,6 +100,12 @@ declare module "minecart-sdk" {
     archive: Archive;
   };
 
+  export type Category = {
+    id: number;
+    name: string;
+    archive: Archive;
+  };
+
   export type Gateway = "MercadoPago" | "PayPal" | "PicPay" | "Pix" | "Stripe";
 
   export type Payment = {

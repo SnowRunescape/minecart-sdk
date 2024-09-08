@@ -1,4 +1,4 @@
-import { API } from "@Minecart/services/api";
+import { API, parseResponseData } from "@Minecart/services/api";
 import { RawResponse } from "@Minecart/services/api/types";
 import { Gateway } from "@Minecart/types/Gateway";
 import { Item, Payment } from "@Minecart/types/Payment";
@@ -16,7 +16,7 @@ export const payment = {
         username,
         coupon,
         cart: items,
-      });
+      }).then((data) => parseResponseData(data));
     } catch (error: any) {
       console.error("Error create payment:", error.message);
       return [];
