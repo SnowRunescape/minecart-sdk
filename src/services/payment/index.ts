@@ -5,14 +5,9 @@ import { PaymentCreateProps } from "./types";
 
 export const payment = {
   async create({ items, ...props }: PaymentCreateProps) {
-    try {
-      return await API.post<RawResponse<Payment>>("/shop/payment", {
-        cart: items,
-        ...props,
-      }).then((data) => parseResponseData(data));
-    } catch (error: any) {
-      console.error("Error create payment:", error.message);
-      return [];
-    }
+    return API.post<RawResponse<Payment>>("/shop/payment", {
+      cart: items,
+      ...props,
+    }).then((data) => parseResponseData(data));
   },
 };
