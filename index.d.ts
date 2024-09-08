@@ -93,6 +93,7 @@ declare module "minecart-sdk" {
 
   export type Product = {
     id: number;
+    shop_server: number;
     category: number;
     name: string;
     description: string;
