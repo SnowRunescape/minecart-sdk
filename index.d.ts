@@ -131,7 +131,7 @@ declare module "minecart-sdk" {
       all(): Promise<Team[]>;
     };
     categories: {
-      all(): Promise<any[]>;
+      all(): Promise<Category[]>;
     };
     servers: {
       all(): Promise<Server[]>;
