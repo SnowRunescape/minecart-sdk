@@ -143,12 +143,17 @@ declare module "minecart-sdk" {
       all(): Promise<Gateway[]>;
     };
     payment: {
-      create(
-        gateway: Gateway,
-        username: string,
-        items: Item[],
-        coupon?: string
-      ): Promise<Payment>;
+      create(props: {
+        gateway: Gateway;
+        username: string;
+        items: Item[];
+        coupon?: string;
+        first_name?: string;
+        last_name?: string;
+        phone?: string;
+        cpf?: string;
+        email?: string;
+      }): Promise<Payment>;
     };
     setApiKey(key: string): void;
   };
