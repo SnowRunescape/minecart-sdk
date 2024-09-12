@@ -1,4 +1,4 @@
-import { MINECART_API } from "@Minecart/config";
+import { MINECART_API, MINECART_VERSION } from "@Minecart/config";
 import axios, { AxiosResponse } from "axios";
 import { setupInterceptores } from "./interceptors";
 import { RawResponse } from "./types";
@@ -10,6 +10,7 @@ export const API = axios.create({
   timeout: TIMEOUT,
   headers: {
     "Content-Type": "application/json",
+    "X-API-VERSION": MINECART_VERSION,
   },
 });
 
