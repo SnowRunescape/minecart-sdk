@@ -7,6 +7,7 @@ import { rules } from "@Minecart/services/rules";
 import { servers } from "@Minecart/services/servers";
 import { store } from "@Minecart/services/store";
 import { team } from "@Minecart/services/team";
+import { coupons } from "@Minecart/services/coupon";
 
 export const minecart = {
   store,
@@ -16,6 +17,7 @@ export const minecart = {
   categories,
   servers,
   products,
+  coupons,
   gateways,
   payment,
   setApiKey: (key: string) => {

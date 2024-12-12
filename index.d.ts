@@ -107,6 +107,13 @@ declare module "minecart-sdk" {
     archive: Archive;
   };
 
+  export type Coupon = {
+    type: number;
+    discount: number;
+    min_cart_amount: number;
+    products_with_discount: number[];
+  };
+
   export type Gateway = "MercadoPago" | "PayPal" | "PicPay" | "Pix" | "Stripe";
 
   export type Payment = {
@@ -140,6 +147,9 @@ declare module "minecart-sdk" {
     products: {
       all(filters?: Record<string, string | number>): Promise<Product[]>;
     };
+    coupons: {
+      get(coupon: string): Promise<Coupon[]>;
+    },
     gateways: {
       all(): Promise<Gateway[]>;
     };
