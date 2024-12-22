@@ -13,4 +13,11 @@ export const store = {
       return [];
     }
   },
+  async rum() {
+    try {
+      await API.get<RawResponse<Store>>("/shop/rum").then((data) =>
+        parseResponseData(data)
+      );
+    } catch (error: any) {}
+  },
 };

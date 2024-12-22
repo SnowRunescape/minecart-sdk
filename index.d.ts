@@ -133,6 +133,7 @@ declare module "minecart-sdk" {
   export const minecart: {
     store: {
       get(): Promise<Store>;
+      rum(): Promise<void>;
     };
     news: {
       all(): Promise<News[]>;
