@@ -11,4 +11,10 @@ export type PaymentCreateProps = {
   phone?: string;
   cpf?: string;
   email?: string;
+  back_urls?: {
+    success?: string;
+    failure?: string;
+    pending?: string;
+    cancel?: string;
+  };
 };

@@ -176,6 +176,12 @@ declare module "minecart-sdk" {
         phone?: string;
         cpf?: string;
         email?: string;
+        back_urls?: {
+          success?: string;
+          failure?: string;
+          pending?: string;
+          cancel?: string;
+        };
       }): Promise<Payment>;
     };
     setApiKey(key: string): void;
