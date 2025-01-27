@@ -111,6 +111,7 @@ declare module "minecart-sdk" {
     id: number;
     name: string;
     archive: Archive;
+    order: number;
   };
 
   export type Coupon = {
