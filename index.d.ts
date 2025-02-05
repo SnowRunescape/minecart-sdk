@@ -54,6 +54,12 @@ declare module "minecart-sdk" {
         amount?: string;
       }[];
     };
+    goal: {
+      enabled: boolean;
+      display_value: boolean;
+      target_value: number;
+      description: string;
+    };
   };
 
   export type News = {
