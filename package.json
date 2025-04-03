@@ -1,6 +1,9 @@
 {
   "name": "minecart-sdk",
-  "version": "4.8.2",
+  "keywords": [
+    "minecart"
+  ],
+  "version": "4.8.3",
   "main": "build/index.js",
   "types": "index.d.ts",
   "license": "MIT",
