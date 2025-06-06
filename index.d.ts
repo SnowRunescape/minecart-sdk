@@ -99,7 +99,7 @@ declare module "minecart-sdk" {
 
   export type Product = {
     id: number;
-    shop_server: number;
+    server_id: number;
 
     /**
      * @deprecated Use `categories` instead.
